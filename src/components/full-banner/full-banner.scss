@@ -26,14 +26,14 @@
   }
 }
 
-.list-item {
+.details-item {
   display: inline-block;
   margin-right: 10px;
 }
-.list-enter-active, .list-leave-active {
+.details-enter-active, .details-leave-active {
   transition: all 1s;
 }
-.list-enter, .list-leave-to /* .list-leave-active em versões anteriores a 2.1.8 */ {
+.details-enter, .details-leave-to /* .list-leave-active em versões anteriores a 2.1.8 */ {
   opacity: 0;
   transform: translateY(30px);
 }
