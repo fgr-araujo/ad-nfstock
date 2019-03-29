@@ -1,0 +1,94 @@
+$inputHeight: 4rem;
+$borderRadius: 5px;
+
+.input-label {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  height: $inputHeight;
+  width: 100%;
+  border-radius: $borderRadius;
+  background-color: $white;
+  border: 2px solid $light-grey;
+  overflow: hidden;
+  padding-left: 1em;
+
+  &.-normal > .iconcontainer {
+    background-color: $white;
+  }
+
+  &.-warning {
+    border-color: $danger;
+  }
+
+  & > .placeholder {
+    position: absolute;
+    align-self: center;
+    font-size: 1.5em;
+    color: $grey;
+  }
+
+  & > .input:focus + .placeholder,
+  & > .input:valid + .placeholder {
+    font-size: 1em;
+    transform: translateY(-1em);
+  }
+
+  &.-warning > .placeholder {
+    color: $danger;
+  }
+
+  & > .iconcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: 5em;
+    height: 100%;
+    border-radius: $borderRadius;
+  }
+
+  & > .iconcontainer.-warning {
+    opacity: 0;
+    position: absolute;
+  }
+
+  &.-warning > .iconcontainer.-warning {
+    opacity: 1;
+    background-color: $danger;
+    right: -2px;
+  }
+
+  & > .iconcontainer > .icon {
+    font-size: 1.5em;
+    color: $grey;
+  }
+
+   &.-warning > .iconcontainer.-warning > .icon {
+    color: $white;
+  }
+
+  & > .input {
+    height: 3em;
+    width: 100%;
+    border: none;
+    color: $dark-grey;
+    background-color: $white;
+  }
+
+  & > .input::-webkit-input-placeholder { /* Edge */
+    opacity: 0;
+  }
+
+  & > .input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    opacity: 0;
+  }
+
+  & > .input::placeholder {
+    opacity: 0;
+  }
+
+  & > .error {
+    height: 2em;
+  }
+}
