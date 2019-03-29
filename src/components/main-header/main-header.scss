@@ -1,1 +1,14 @@
-.main-header {}
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  & > .link {
+    display: flex;
+    justify-content: center;
+  }
+
+  & > .link > .logo {
+    margin: 0 2em;
+  }
+}

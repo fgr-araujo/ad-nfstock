@@ -1,11 +1,23 @@
 <template>
   <header class="main-header">
-    <img src="https://nfstock.alterdata.com.br/Content/images/Login/_logoNfstock.png" alt="NF Stock - Logo">
+    <router-link class="link">
+    <img
+      class="logo"
+      src="https://www.alterdata.com.br/images/fixo/identidades/nfstock.svg"
+      alt="NF Stock - Logo">
+    </router-link>
+
+    <main-menu />
   </header>
 </template>
 
 <script>
+import MainMenu from '@/components/main-menu/main-menu'
+
 export default {
-  name: 'MainHeader'
+  name: 'MainHeader',
+  components: {
+    MainMenu
+  }
 }
 </script>
