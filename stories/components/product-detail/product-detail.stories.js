@@ -5,7 +5,7 @@ storiesOf("product-detail", module)
   .add("default", () => ({
     components: { ProductDetail },
     template: `
-      <section style="background-color: #DDD; width: 100%; height: 100%;">
+      <section style="background-color: #FFF; width: 100%; height: 100%;">
         <product-detail />
       </section>
     `

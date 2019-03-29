@@ -1,4 +1,32 @@
 .pack-class {
-  .title {}
-  .description {}
+  display: flex;
+  align-items: center;
+  color: $dark-grey;
+  padding: 3em 2em;
+  background-color: $light-grey;
+
+  & > .info {
+    flex: 1 1 auto;
+  }
+
+  & > .info > .title {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+  }
+
+  & > .info > .subtitle {
+    font-size: 1.8em;
+    margin-bottom: 1em;
+  }
+
+  & > .info > .description {
+    font-size: 1.2em;
+    line-height: 2em;
+    text-align: justify;
+  }
+
+  & > .imagem {
+    flex: 0 0 100px;
+    margin-left: 100px;
+  }
 }

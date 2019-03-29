@@ -1,4 +1,16 @@
+$footerHeight: 80px;
+
 .main-footer {
-  .title {}
-  .description {}
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $footerHeight;
+  padding: 2em;
+  background-color: #222;
+
+  & > .rights {
+    color: #FFF;
+  }
+
+  & > .logo {}
 }

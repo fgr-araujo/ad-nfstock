@@ -6,7 +6,7 @@ storiesOf("main-footer", module)
     components: { MainFooter },
     template: `
       <section style="background-color: #DDD; width: 100%; height: 100%;">
-      <main-footer />
+        <main-footer />
       </section>
     `
   })
