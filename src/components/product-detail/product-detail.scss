@@ -12,12 +12,28 @@
   }
 
   & > .product > .title {
+    display: flex;
+    align-items: center;
     font-size: 2.5em;
     margin-bottom: 1em;
   }
+
+  & > .product > .title > .icon {
+    color: $dark-grey;
+    margin-right: .5em;
+  }
+
   & > .product > .description {
     font-size: 1.2em;
     line-height: 2em;
     text-align: justify;
+  }
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+
+    & > .product {
+      margin-bottom: 2em;
+    }
   }
 }
