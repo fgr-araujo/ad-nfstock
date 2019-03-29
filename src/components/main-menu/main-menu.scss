@@ -19,7 +19,7 @@ $popupBackgroundColor: #FFF;
   & > .icon { display: none; }
   & > .list.-popup { display: none; }
 
-  @media (max-width: 700px) {
+  @media (max-width: 920px) {
     & > .icon {
       display: block;
       width: 30px;
@@ -50,7 +50,7 @@ $popupBackgroundColor: #FFF;
     }
   }
 
-  @media (min-width: 700px) {
+  @media (min-width: 920px) {
     & > .list {
       display: flex;
       align-items: center;
