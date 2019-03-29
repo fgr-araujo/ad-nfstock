@@ -1,0 +1,39 @@
+.full-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://securionpay.com/wp-content/uploads/2016/08/What-is-a-Bank-Trust-Account.svg");
+  background-size: cover;
+
+  & > .carousel {
+    margin-left: 3em;
+    background-color: #F00;
+    width: 400px;
+    z-index: 1;
+  }
+
+  & > .carousel > .details {
+  }
+
+  & > .carousel > .details > .title {
+    font-size: 3rem;
+  }
+
+  & > .carousel > .details > .description {
+    font-size: 1.2em;
+  }
+}
+
+.list-item {
+  display: inline-block;
+  margin-right: 10px;
+}
+.list-enter-active, .list-leave-active {
+  transition: all 1s;
+}
+.list-enter, .list-leave-to /* .list-leave-active em versões anteriores a 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(30px);
+}
