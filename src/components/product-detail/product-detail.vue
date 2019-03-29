@@ -11,7 +11,7 @@
     </div>
 
     <div class="product">
-      <h2 class="title"><i class="icon fas fa-shield-alt"></i></i>Segurança</h2>
+      <h2 class="title"><i class="icon fas fa-shield-alt"></i>Segurança</h2>
       <p class="description">O NF-Stock protege seu cliente contra fraudes! Todas as notas emitidas contra o CNPJ do seu cliente serão automaticamente baixadas do site da Receita Federal ou da Prefeitura, evitando que as notas geradas indevidamente passem despercebidas.</p>
     </div>
   </section>

@@ -27,6 +27,18 @@
 
   & > .imagem {
     flex: 0 0 100px;
-    margin-left: 100px;
+    margin-left: 5em;
+  }
+
+  @media (max-width: 960px) {
+    flex-direction: column;
+
+    & > .info {
+      order: 1;
+    }
+    & > .imagem {
+      order: 0;
+      margin-bottom: 3em;
+    }
   }
 }
