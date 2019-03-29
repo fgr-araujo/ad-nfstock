@@ -1,0 +1,13 @@
+.product-detail {
+  display: flex;
+  justify-content: space-between;
+
+  & > .product {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+  }
+
+  & > .product > .title {}
+  & > .product > .description {}
+}
