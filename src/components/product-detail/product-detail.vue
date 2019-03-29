@@ -19,25 +19,6 @@
 
 <script>
 export default {
-  name: 'FullBanner',
-  data () {
-    return {
-      showDetail: 0
-    }
-  },
-  mounted () {
-    this.changeCarousel()
-  },
-  methods: {
-    changeCarousel() {
-      setInterval(() => {
-        if (this.showDetail > 1) {
-          this.showDetail = 0
-        } else {
-          this.showDetail++;
-        }
-      }, 2000)
-    }
-  }
+  name: 'ProductDetail'
 }
 </script>
