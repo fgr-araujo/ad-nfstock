@@ -1,4 +1,93 @@
 .plans-price {
-  .title {}
-  .description {}
+  position: reltive;
+  display: flex;
+  justify-content: center;
+
+  & > .plan {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 0 0 300px;
+    align-items: center; 
+    border: 1px solid $light-grey;
+    margin: 0 2em;
+    background-color: $dark-grey;
+    box-shadow: 0 0 20px 10px $light-grey;
+    transition: all .5s ease;
+  }
+
+   & > .plan:hover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 0 0 300px;
+    align-items: center; 
+    border: 1px solid $light-grey;
+    margin: 0 2em;
+    background-color: $dark-grey;
+    transform: scale(1.02);
+    box-shadow: 0 0 20px 10px darken($light-grey, 10);
+  }
+
+  & > .plan > .title {
+    font-size: 2em;
+    color: $white;
+    text-align: center;
+    margin-top: 2em;
+  }
+
+  & > .plan > .price {
+    display: flex;
+    margin: 3em 0;
+  }
+
+  & > .plan > .price > .currency {
+    align-self: flex-start;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: $grey;
+  }
+
+  & > .plan > .price > .value {
+    align-self: flex-center;
+    font-size: 4em;
+    font-weight: bold;
+    color: $white;
+  }
+
+  & > .plan > .price > .period {
+    align-self: flex-end;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: $grey;
+  }
+
+  & > .plan > .button {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid $white;
+    border-radius: 4px;
+    width: 80%;
+    color: $white;
+    padding: .5em 0;
+    font-size: 1.2em;
+    margin-bottom: 2em;
+  }
+
+  & > .plan > .feature {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: $white;
+    height: 10em;
+    padding: 1em 3em;
+  }
+
+  & > .plan > .feature > .description {
+    font-size: 1.1em;
+    color: $dark-grey;
+    line-height: 1.5em;
+  }
 }
