@@ -6,11 +6,10 @@ $footerHeight: 80px;
   align-items: center;
   height: $footerHeight;
   padding: 2em;
-  background-color: #222;
+  background-color: $dark-grey;
+  width: 100%;
 
   & > .rights {
-    color: #FFF;
+    color: $white;
   }
-
-  & > .logo {}
 }

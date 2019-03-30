@@ -3,8 +3,8 @@
     <div class="illustration"></div>
 
     <div class="container">
-      <form class="form" @submit.prevent="doLogin" novalidate="true">
-        <h3 class="title">Login</h3>
+      <form class="form" @submit.prevent="doRegister" novalidate="true">
+        <h3 class="title">Cadastro</h3>
         <label class="input-label" :class="{ '-warning': validation.invalidEmail }">
           <input
             class="input" type="text"
@@ -43,15 +43,33 @@
           </div>
         </label>
 
+         <label class="input-label" :class="{ '-warning': validation.invalidPassword }">
+          <input
+            class="input" type="password"
+            v-model="formData.password"
+            placeholder="Repita sua senha"
+            @blur="validatePassword"
+            required>
+          
+          <span class="placeholder">Repita sua senha</span>
+        
+          <div class="iconcontainer">
+            <i class="icon fas fa-comment-dots"></i>
+          </div>
+
+          <div class="iconcontainer -warning" title="Esse campo está inválido">
+            <i class="icon fas fa-exclamation-triangle"></i>
+          </div>
+        </label>
+
         <button
           class="button -primary"
           :class="{ '-busy': commandBusy }"
-          :disabled="commandBusy">Logar</button>
-        
+          :disabled="commandBusy">Registrar</button>
         <button
           class="button -ghostinverse"
           type="button"
-          @click="register">Cadastrar</button>
+          @click="navigateToLogin">Ir para Login</button>
       </form>
     </div>
 
@@ -78,26 +96,22 @@ export default {
       },
       formData: {
         email: 'ifgr.fagner@gmail.com',
-        password: 'abc123'
+        password: 'abc123',
+        confirmPassword: 'abc123'
       },
     }
   },
   methods: {
-    async doLogin() {
+    async doRegister() {
       if (!this.isFormValid()) {
         this.$refs.Toast.showToast({
           toastType: 'warning',
           description: 'Os campos devem estar preenchidos corretamente' })
         return false
       }
-
       this.commandBusy = true
       try {
-        await this.$store.dispatch('Login/doLogin', {
-          email: this.formData.email,
-          password: this.formData.password
-        })
-
+        await this.$store.dispatch('Login/doRegister', { email: this.formData.email, password: this.formData.password })
         this.commandBusy = false
         this.$router.push('/')
       } catch(err) {
@@ -114,13 +128,13 @@ export default {
     validatePassword () {
       return this.validation.invalidPassword = this.formData.password.length < 4
     },
-      isFormValid() {
+    isFormValid() {
       const isEmailValid = this.validateEmail()
       const isPasswordValid = this.validatePassword()
       return !(isEmailValid || isPasswordValid)
     },
-    register () {
-      this.$router.push('register')
+    navigateToLogin () {
+      this.$router.push('/login')
     }
   }
 }

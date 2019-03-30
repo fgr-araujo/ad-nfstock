@@ -1,10 +1,9 @@
 import { shallowMount } from '@vue/test-utils'
-import MainHeader from '@/components/main-header/main-header.vue'
+import HomePage from '@/views/home-page/home-page'
 
 describe('main-header.vue', () => {
   it('Should have the correct name', () => {
-    const msg = 'new message'
-    const wrapper = shallowMount(MainHeader);
-    expect(wrapper.text()).toMatch(msg)
+    const wrapper = shallowMount(HomePage);
+    expect(wrapper.vm.$options.name).toEqual('HomePage')
   })
 })

@@ -78,6 +78,19 @@
   &.-ghost:disabled {
     opacity: .2;
   }
+
+  &.-ghostinverse {
+    background-color: rgba(255, 255, 255, 0);
+    color: $grey;
+    border: 2px solid $grey;
+  }
+  &.-ghostinverse:hover:not(:disabled) {
+    background-color: $grey;
+    color: $white;
+  }
+  &.-ghostinverse:disabled {
+    opacity: .2;
+  }
 }
 
 @keyframes spinHourGlass {

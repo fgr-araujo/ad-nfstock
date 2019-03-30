@@ -1,0 +1,40 @@
+.toast {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  max-width: 300px;
+  border-radius: 5px;
+  color: $white;
+  padding: 2em;
+
+  & > h3 {
+    padding: .4em 0;
+    margin: 0;
+  }
+
+  & > .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+  }
+
+  & > .content > h5 {
+    padding: .4em 0;
+    margin: 0;
+  }
+
+  & > .content > .toast-btn{
+    background-color: inherit;
+    border: none;
+    color: $light-grey;
+    padding: .4em;
+    margin-left: 1em;
+  }
+}
+
+.toast-success { background-color: $success; }
+.toast-warning { background-color: $warning; }
+.toast-danger { background-color: $danger; }
+.toast-primary { background-color: $primary; }
+

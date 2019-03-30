@@ -1,10 +1,9 @@
 import { shallowMount } from '@vue/test-utils'
-import MainHeader from '@/components/main-header/main-header.vue'
+import LoginPage from '@/views/login-page/login-page'
 
-describe('main-header.vue', () => {
+describe('LoginPage', () => {
   it('Should have the correct name', () => {
-    const msg = 'new message'
-    const wrapper = shallowMount(MainHeader);
-    expect(wrapper.text()).toMatch(msg)
+    const wrapper = shallowMount(LoginPage);
+    expect(wrapper.vm.$options.name).toEqual('LoginPage')
   })
 })

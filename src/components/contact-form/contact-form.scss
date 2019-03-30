@@ -1,4 +1,54 @@
-.pack-class {
-  .title {}
-  .description {}
+.contact-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  background-color: $grey;
+  padding-bottom: 3em;
+
+  & > .content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    font-size: .9rem;
+  }
+
+  & > .content > .form {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 400px;
+  }
+
+  & > .content > .form > .title {
+    font-size: 2em;
+    color: $dark-grey;
+    line-height: 3em;
+    text-align: center;
+  }
+
+  & > .content > .form > .description {
+    font-size: 1.2em;
+    color: $dark-grey;
+    margin: 1em 0;
+    line-height: 1.5em;
+  }
+
+  & > .content > .form .input-label {
+    margin-bottom: 1em;
+  }
+
+  @media (max-width: 1200px) {
+    & > .content {
+      padding: 0 1em;
+      font-size: .7rem;
+    }
+  }
+
+  @media (max-width: 920px) {
+    & > .content {
+      flex-direction: column;
+    }
+  }
 }

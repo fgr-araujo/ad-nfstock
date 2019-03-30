@@ -46,12 +46,12 @@
   }
 
   & > .iconcontainer.-warning {
-    opacity: 0;
+    visibility: hidden;
     position: absolute;
   }
 
   &.-warning > .iconcontainer.-warning {
-    opacity: 1;
+    visibility: visible;
     background-color: $danger;
     right: -2px;
   }

@@ -1,5 +1,6 @@
 <template>
   <section class="pack-class">
+
     <div class="info">
       <h2 class="title">Quer potencializar seus resultados?</h2>
       <h5 class="subtitle">Conheça a consultoria Pack Class.</h5>

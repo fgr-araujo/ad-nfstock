@@ -8,8 +8,8 @@
   background-size: cover;
 
   & > .carousel {
-    margin-left: 3em;
-    background-color: #F00;
+    margin-left: 5em;
+    // background-color: $light-grey;
     width: 400px;
     z-index: 1;
   }
@@ -18,11 +18,20 @@
   }
 
   & > .carousel > .details > .title {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    color: $white;
+    margin-bottom: 1em;
   }
 
   & > .carousel > .details > .description {
-    font-size: 1.2em;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    color: $white;
+    margin-bottom: 2em;
+  }
+
+  & > .carousel > .details > .button {
+    margin-bottom: 1em
   }
 }
 

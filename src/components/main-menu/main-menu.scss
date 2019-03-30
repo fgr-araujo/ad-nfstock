@@ -1,20 +1,13 @@
-$mainMenuHeight: 80px;
-$menuIconColor: #0F0;
-$menuOnTop: rgba(255, 255, 255, 0);
-$menuScrolled: rgba(255, 255, 255, 1);
-$popupBackgroundColor: #FFF;
+$mainMenuHeight: $headerHeight;
+$menuIconColor: $dark-grey;
+$popupBackgroundColor: $white;
 
 .main-menu {
   position: relative;
   display: inline-flex;
-  background-color: $menuOnTop;
   transition: background-color .3s;
   height: 100%;
   padding: 0 1em;
-
-  &.-opaque {
-    background-color: $menuScrolled;
-  }
 
   & > .icon { display: none; }
   & > .list.-popup { display: none; }
