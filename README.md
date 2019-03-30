@@ -58,3 +58,4 @@ Para fins de teste, usar a seguinte conta:
 ## Melhorias
 * Cobrir melhor os testes unitários
 * Implementar GDPR
+* Validar dados do cartão de crédito
