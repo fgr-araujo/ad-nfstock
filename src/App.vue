@@ -12,7 +12,9 @@ import firebase from 'firebase/app'
 
 export default {
   name: 'App',
-  mounted () {
+  async mounted () {
+    await this.$store.dispatch('Login/startFirebase')
+
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         const user = firebase.auth().currentUser;

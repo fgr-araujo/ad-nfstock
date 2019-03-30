@@ -103,7 +103,13 @@
           :disabled="phoneCommandBusy">
           Enviar Contato
         </button>
+      
+        <div class="phone">
+          <p class="description">Ou entre em contato conosco através do telefone:</p>
+          <h2 class="number">0800-704-1418</h2>
+        </div>
       </form>
+
     </section>
     <push-toast :dismiss="true" ref="Toast" />
   </section>

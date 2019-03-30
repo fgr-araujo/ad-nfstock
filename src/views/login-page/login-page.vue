@@ -16,7 +16,7 @@
           <span class="placeholder">Digite seu email</span>
         
           <div class="iconcontainer">
-            <i class="icon fas fa-comment-dots"></i>
+            <i class="icon fas fa-envelope"></i>
           </div>
 
           <div class="iconcontainer -warning" title="Esse campo está inválido">
@@ -35,7 +35,7 @@
           <span class="placeholder">Digite sua senha</span>
         
           <div class="iconcontainer">
-            <i class="icon fas fa-comment-dots"></i>
+            <i class="icon fas fa-key"></i>
           </div>
 
           <div class="iconcontainer -warning" title="Esse campo está inválido">
@@ -43,15 +43,25 @@
           </div>
         </label>
 
-        <button
-          class="button -primary"
-          :class="{ '-busy': commandBusy }"
-          :disabled="commandBusy">Logar</button>
-        
+        <div class="commands">
+          <button
+            class="button -success"
+            :class="{ '-busy': commandBusy }"
+            :disabled="commandBusy">Efetuar Login</button>
+          
+          <button
+            class="button -primary"
+            type="button"
+            @click="navigateTo('/register')">Desejo me cadastrar</button>
+        </div>
+
         <button
           class="button -ghostinverse"
+          :class="{ '-busy': commandBusy }"
           type="button"
-          @click="register">Cadastrar</button>
+          @click="navigateTo('/')"
+          :disabled="commandBusy">Ir para tela inicial</button>
+
       </form>
     </div>
 
@@ -114,13 +124,13 @@ export default {
     validatePassword () {
       return this.validation.invalidPassword = this.formData.password.length < 4
     },
-      isFormValid() {
+    isFormValid() {
       const isEmailValid = this.validateEmail()
       const isPasswordValid = this.validatePassword()
       return !(isEmailValid || isPasswordValid)
     },
-    register () {
-      this.$router.push('register')
+    navigateTo (url) {
+      this.$router.push(url)
     }
   }
 }

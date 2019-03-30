@@ -1,13 +1,6 @@
 import Firebase from 'firebase/app'
-
-const handleAuthError = (errCode) => {
-  switch (errCode) {
-    case 'auth/email-already-in-use':
-      return 'Usuário já existe em nosso sistema e não podemos cadastra-lo novamente'
-    default:
-      return 'Ocorreu um erro e não podemos prossegir. Cheque os dados'
-  }
-}
+import FirebaseConfig from './firebase-config'
+import handleAuthError from './handle-auth-error'
 
 const state = {
   isLogged: false,
@@ -19,6 +12,9 @@ const state = {
 }
 
 const actions = {
+  startFirebase: () => {
+    Firebase.initializeApp(FirebaseConfig);
+  },
   doLogin: async ({ commit }, { email, password }) => {
     try {
       await Firebase.auth().signInWithEmailAndPassword(email, password)
@@ -50,7 +46,6 @@ const actions = {
       commit('setLogin', false)
       return true
     } catch (err) {
-      console.log(err)
       commit('setUser', {
         displayUser: null,
         email: null,
@@ -72,7 +67,6 @@ const mutations = {
       email,
       token: refreshToken
     }
-    console.log(displayName, email, refreshToken)
   },
   resetUser: (state) => state.userInformations = {
     displayName: null,

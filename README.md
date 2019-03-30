@@ -36,3 +36,25 @@ npm run docker-run
 ```
 npm run test
 ```
+
+## PagarMe
+O sistema de pagamento já está integrado com o PagarMe o que o torna totalmente funcional.
+
+Para acessar o dashboard com os extratos, utilize os dados abaixo:
+**site:** https://dashboard.pagar.me
+**user:** ifgr.fagner@gmail.com
+**senha:** queroseralterdata0204
+
+Para fins de teste, usar a seguinte conta:
+**Número do cartão:** 4111111111111111
+
+**Validate:** 1219
+
+**CVV:** 231
+
+**Nome** João da Silva
+
+
+## Melhorias
+* Cobrir melhor os testes unitários
+* Implementar GDPR

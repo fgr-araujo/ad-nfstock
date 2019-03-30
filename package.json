@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "firebase": "^5.9.2",
+    "pagarme": "^4.1.0",
     "vue": "^2.6.6",
     "vue-anchor-router-link": "^0.8.4",
     "vue-router": "^3.0.1",

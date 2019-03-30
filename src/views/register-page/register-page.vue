@@ -62,14 +62,22 @@
           </div>
         </label>
 
-        <button
-          class="button -primary"
-          :class="{ '-busy': commandBusy }"
-          :disabled="commandBusy">Registrar</button>
-        <button
+        <div class="commands">
+          <button
+            class="button -success"
+            :class="{ '-busy': commandBusy }"
+            :disabled="commandBusy">Registrar</button>
+          <button
+            class="button -primary"
+            type="button"
+            @click="navigateTo('/login')">Ir para Login</button>
+          </div>
+
+          <button
           class="button -ghostinverse"
           type="button"
-          @click="navigateToLogin">Ir para Login</button>
+          @click="navigateTo('/')"
+          :disabled="commandBusy">Ir para tela inicial</button>
       </form>
     </div>
 
@@ -133,8 +141,8 @@ export default {
       const isPasswordValid = this.validatePassword()
       return !(isEmailValid || isPasswordValid)
     },
-    navigateToLogin () {
-      this.$router.push('/login')
+    navigateTo (url) {
+      this.$router.push(url)
     }
   }
 }

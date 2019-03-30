@@ -34,14 +34,12 @@
 </template>
 
 <script>
-import MainMenu from '@/components/main-menu/main-menu'
 import { IconMenu } from '@/components/icons'
 import { mapGetters } from 'vuex'
 
 export default {
   name: 'MainHeader',
   components: {
-    MainMenu,
     IconMenu
   },
   data () {

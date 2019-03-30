@@ -18,19 +18,35 @@
     justify-content: center;
   }
 
+  @media (max-width: 1000px) {
+    & > .illustration {
+      display: none;
+    }
+  }
+
   & > .container > .form {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     height: 400px;
-    flex: 0 1 400px;
+    flex: 0 0 400px;
   }
 
   & > .container > .form > .title {
     display: block;
     font-size: 3em;
     color: $dark-grey;
+  }
+
+  & > .container > .form > .commands {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  & > .container > .form > .commands > .button {
+    flex: 0 0 45%;
   }
 
 }
