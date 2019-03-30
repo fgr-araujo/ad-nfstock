@@ -4,8 +4,8 @@
 
     <section class="content">
       <form class="form" @submit.prevent="submitMessage" novalidate="true">
-        <h2 class="title">Envie-nos uma menssagem</h2>
-        <p class="description">Utiliza o formulário abaixo para entrar em contato conosco</p>
+        <h2 class="title">Envie-nos uma mensagem</h2>
+        <p class="description">Utilize o formulário abaixo para entrar em contato conosco</p>
 
         <label class="input-label" :class="{ '-warning': validation.invalidName }">
           <input
@@ -69,7 +69,7 @@
           class="button -primary"
           :class="{ '-busy': commandBusy }"
           :disabled="commandBusy">
-          Enviar menssagem
+          Enviar mensagem
         </button>
       </form>
 

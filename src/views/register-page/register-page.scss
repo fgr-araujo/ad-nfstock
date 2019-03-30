@@ -1,14 +1,22 @@
 .login-page {
   position: relative;
   display: flex;
-  // align-items: center;
   width: 100vw;
   height: 100vh;
 
   & > .illustration {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     flex: 1 1 50%;
-    background-image: url("https://securionpay.com/wp-content/uploads/2016/08/What-is-a-Bank-Trust-Account.svg");
-    background-size: cover;
+    background-color: $light-grey;
+  }
+  
+  & > .illustration > .welcome {
+    font-size: 3em;
+    color: $grey;
+    margin-top: 1em;
   }
 
   & > .container {

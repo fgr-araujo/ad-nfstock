@@ -1,6 +1,12 @@
 <template>
   <div class="login-page">
-    <div class="illustration"></div>
+    <div class="illustration">
+      <img
+        class="logo"
+        src="https://www.alterdata.com.br/images/fixo/identidades/nfstock.svg"
+        alt="NF Stock - Logo">
+      <h2 class="welcome">Seja bem-vindo</h2>        
+    </div>
 
     <div class="container">
       <form class="form" @submit.prevent="doLogin" novalidate="true">
@@ -87,8 +93,8 @@ export default {
         invalidPassword: false
       },
       formData: {
-        email: 'ifgr.fagner@gmail.com',
-        password: 'abc123'
+        email: '',
+        password: ''
       },
     }
   },

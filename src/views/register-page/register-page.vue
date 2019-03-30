@@ -1,6 +1,12 @@
 <template>
   <div class="login-page">
-    <div class="illustration"></div>
+    <div class="illustration">
+      <img
+        class="logo"
+        src="https://www.alterdata.com.br/images/fixo/identidades/nfstock.svg"
+        alt="NF Stock - Logo">
+      <h2 class="welcome">Seja bem-vindo</h2>        
+    </div>
 
     <div class="container">
       <form class="form" @submit.prevent="doRegister" novalidate="true">
@@ -16,7 +22,7 @@
           <span class="placeholder">Digite seu email</span>
         
           <div class="iconcontainer">
-            <i class="icon fas fa-comment-dots"></i>
+            <i class="icon fas fa-envelope"></i>
           </div>
 
           <div class="iconcontainer -warning" title="Esse campo está inválido">
@@ -24,7 +30,7 @@
           </div>
         </label>
 
-        <label class="input-label" :class="{ '-warning': validation.invalidPassword }">
+        <label class="input-label" :class="{ '-warning': validation.invalidPassword || !isPasswordConfirm }">
           <input
             class="input" type="password"
             v-model="formData.password"
@@ -35,7 +41,7 @@
           <span class="placeholder">Digite sua senha</span>
         
           <div class="iconcontainer">
-            <i class="icon fas fa-comment-dots"></i>
+            <i class="icon fas fa-key"></i>
           </div>
 
           <div class="iconcontainer -warning" title="Esse campo está inválido">
@@ -43,18 +49,18 @@
           </div>
         </label>
 
-         <label class="input-label" :class="{ '-warning': validation.invalidPassword }">
+         <label class="input-label" :class="{ '-warning': validation.invalidRepeatedPassword || !isPasswordConfirm }">
           <input
             class="input" type="password"
-            v-model="formData.password"
+            v-model="formData.repeatedPassword"
             placeholder="Repita sua senha"
-            @blur="validatePassword"
+            @blur="validateRepeatedPassword"
             required>
           
           <span class="placeholder">Repita sua senha</span>
         
           <div class="iconcontainer">
-            <i class="icon fas fa-comment-dots"></i>
+            <i class="icon fas fa-key"></i>
           </div>
 
           <div class="iconcontainer -warning" title="Esse campo está inválido">
@@ -100,13 +106,19 @@ export default {
       validation: {
         isFormValid: false,
         invalidEmail: false,
-        invalidPassword: false
+        invalidPassword: false,
+        invalidRepeatedPassword: false
       },
       formData: {
-        email: 'ifgr.fagner@gmail.com',
-        password: 'abc123',
-        confirmPassword: 'abc123'
+        email: '',
+        password: '',
+        repeatedPassword: ''
       },
+    }
+  },
+  computed: {
+    isPasswordConfirm () {
+      return this.formData.password === this.formData.repeatedPassword
     }
   },
   methods: {
@@ -135,6 +147,12 @@ export default {
     },
     validatePassword () {
       return this.validation.invalidPassword = this.formData.password.length < 4
+    },
+    validateRepeatedPassword () {
+      return this.validation.invalidRepeatedPassword = this.formData.repeatedPassword.length < 4
+    },
+    checkPasswordConfirmation () {
+      return this.formData.password !== this.formData.repeatedPassword
     },
     isFormValid() {
       const isEmailValid = this.validateEmail()

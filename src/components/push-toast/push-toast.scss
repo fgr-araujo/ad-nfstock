@@ -2,10 +2,12 @@
   position: fixed;
   bottom: 2em;
   right: 2em;
-  max-width: 300px;
+  max-width: 500px;
   border-radius: 5px;
   color: $white;
-  padding: 2em;
+  padding: 1.5em;
+  font-size: 1.5em;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, .1);
 
   & > h3 {
     padding: .4em 0;
