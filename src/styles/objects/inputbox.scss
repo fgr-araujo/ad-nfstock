@@ -1,12 +1,9 @@
-$inputHeight: 4rem;
-$borderRadius: 5px;
-
 .input-label {
   position: relative;
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  height: $inputHeight;
+  height: $formInputHeight;
   width: 100%;
   border-radius: $borderRadius;
   background-color: $white;

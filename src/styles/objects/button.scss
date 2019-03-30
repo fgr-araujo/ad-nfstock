@@ -1,0 +1,86 @@
+.button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: $formInputHeight;
+  width: 100%;
+  border-radius: $borderRadius;
+  border: none;
+  font-size: 1.2em;
+  
+  &.-busy::before {
+    content: "\f254";
+    position: absolute;
+    color: $white;
+    font-size: 1.5em;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    right: 1em;
+    top: $formInputHeight / 2 - .75;
+    animation: spinHourGlass 1s infinite; 
+  }
+
+  &.-success {
+    background-color: $success;
+    color: $white;
+  }
+  &.-success:hover:not(:disabled) {
+    background-color: $success-dark;
+  }
+  &.-success:disabled {
+    background-color: transparentize($success, .7);
+  }
+
+  &.-danger {
+    background-color: $danger;
+    color: $white;
+  }
+  &.-danger:hover:not(:disabled) {
+    background-color: $danger-dark;
+  }
+  &.-danger:disabled {
+    background-color: transparentize($danger, .7);
+  }
+
+  &.-warning {
+    background-color: $warning;
+    color: $white;
+  }
+  &.-warning:hover:not(:disabled) {
+    background-color: $warning-dark;
+  }
+  &.-warning:disabled {
+    background-color: transparentize($warning, .7);
+  }
+
+  &.-primary {
+    background-color: $primary;
+    color: $white;
+  }
+  &.-primary:hover:not(:disabled) {
+    background-color: $primary-dark;
+  }
+  &.-primary:disabled {
+    background-color: transparentize($primary, .7);
+  }
+
+  &.-ghost {
+    background-color: rgba(255, 255, 255, 0);
+    color: $white;
+    border: 2px solid $white;
+  }
+  &.-ghost:hover:not(:disabled) {
+    background-color: $white;
+    color: $dark-grey;
+  }
+  &.-ghost:disabled {
+    opacity: .2;
+  }
+}
+
+@keyframes spinHourGlass {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(180deg); }
+}

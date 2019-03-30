@@ -1,4 +1,6 @@
 // Please leave this file in alphabetic order
+$white: #FAFAFA;
+
 $primary: blue;
 $success: green;
 $warning: yellow;
@@ -8,4 +10,14 @@ $grey: #999;
 $dark-grey: #333;
 $light-grey: #EEE;
 
-$white: #FAFAFA;
+$darkLevel: 10;
+$primary-dark: darken($primary, $darkLevel);
+$success-dark: darken($success, $darkLevel);
+$warning-dark: darken($warning, $darkLevel);
+$danger-dark: darken($danger, $darkLevel);
+
+$lightLevel: 10;
+$primary-light: lighten($primary, $lightLevel);
+$success-light: lighten($success, $lightLevel);
+$warning-light: lighten($warning, $lightLevel);
+$danger-light: lighten($danger, $darkLevel);

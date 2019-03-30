@@ -1,9 +1,8 @@
 import { storiesOf } from "@storybook/vue";
 import FullBanner from '../../../src/components/full-banner/full-banner';
 
-storiesOf("Primitves / inputbox", module)
+storiesOf("Primitves/inputbox", module)
   .add("default", () => ({
-    components: { FullBanner },
     template: `
       <section style="background-color: #F9F9F9; width: 100%; height: 100%;">
         <fieldset style="width: 500px; height: 200px; padding: 3em;">
@@ -28,8 +27,7 @@ storiesOf("Primitves / inputbox", module)
       </section>
     `
   }))
-  .add("warning", () => ({
-    components: { FullBanner },
+  .add("Warning", () => ({
     template: `
     <section style="background-color: #F9F9F9; width: 100%; height: 100%;">
         <fieldset style="width: 500px; height: 200px; padding: 3em;">
