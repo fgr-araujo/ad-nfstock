@@ -132,10 +132,10 @@ export default {
       },
       formData: {
         amount: '0',
-        cardNumber: '4111111111111111',
-        cardCvv: '231',
-        cardExpirationDate: '1219',
-        cardHolderName: 'Fagner dos S ARaujo'
+        cardNumber: '',
+        cardCvv: '',
+        cardExpirationDate: '',
+        cardHolderName: ''
       }
     }
   },
