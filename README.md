@@ -73,9 +73,13 @@ Ao efetuar a compra de um plano, esse será registrado na ferramenta de pagament
 Os pagamentos podem ser acomapanhados pelo dashboard do *PagarMe* em tempo real.
 
 Para acessar o dashboard, utilize os dados abaixo:
-**site:** https://dashboard.pagar.me
-**user:** ifgr.fagner@gmail.com
-**senha:** queroseralterdata0204
+
+| Campo        | Valor           |
+| ------------- |:-------------:|
+| site      | https://dashboard.pagar.me |
+| user      | ifgr.fagner@gmail.com      |
+| senha | queroseralterdata0204      |
+
 
 Para fins de teste, usar os seguintes dados para  cartão de crédito:
 
