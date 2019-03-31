@@ -12,16 +12,18 @@
       </svg>
     </div>
 
-    <div class="tabletdevices">
-      <img class="device" src="@/assets/images/cms-for-tablets.png" alt="">
-      <img class="code" src="@/assets/images/cms-for-tablets-code.png" alt="">
-      <img class="ui" src="@/assets/images/cms-for-tablets-ui.png" alt="">
-    </div>
-    
-    <div class="mobiledevices">
-      <img class="device" src="@/assets/images/cms-for-mobile.png" alt="">
-      <img class="code" src="@/assets/images/cms-for-mobile-code.png" alt="">
-      <img class="ui" src="@/assets/images/cms-for-mobile-ui.png" alt="">
+    <div class="animations">
+      <div class="tabletdevices">
+        <img class="device" src="@/assets/images/cms-for-tablets.png" alt="">
+        <img class="code" src="@/assets/images/cms-for-tablets-code.png" alt="">
+        <img class="ui" src="@/assets/images/cms-for-tablets-ui.png" alt="">
+      </div>
+      
+      <div class="mobiledevices">
+        <img class="device" src="@/assets/images/cms-for-mobile.png" alt="">
+        <img class="code" src="@/assets/images/cms-for-mobile-code.png" alt="">
+        <img class="ui" src="@/assets/images/cms-for-mobile-ui.png" alt="">
+      </div>
     </div>
 
     <ul class="carousel">

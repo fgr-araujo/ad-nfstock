@@ -2,9 +2,10 @@
   <section class="plans-price">
     <div
       class="plan"
-      :class="[ plan.planStyle ]"
+      :class="[ plan.planStyle, hiredPlan === p ? '-hired' : '' ]"
       v-for="(plan, p) in plans"
       :key="p">
+
       <h5 class="title">{{ plan.planName }}</h5>
       <div class="price">
         <div class="currency">R$</div>
@@ -13,8 +14,17 @@
       </div>
       <button
         class="button"
+        v-if="hiredPlan !== p"
         type="button"
         @click="signPlan(p)">Contratar Plano</button>
+      
+      <span
+        class="hiredplan"
+        v-if="hiredPlan === p">
+        <i class="icon fas fa-star"></i>
+        Plano contratado!
+      </span>
+
       <ul class="feature">
         <li
           class="description"
@@ -32,7 +42,8 @@ export default {
   computed: {
     ...mapGetters({
       isLogged: 'Login/isLogged',
-      plans: 'Plans/getAllPlans'
+      plans: 'Plans/getAllPlans',
+      hiredPlan: 'Plans/getHiredPlan'
     })
   },
   methods: {

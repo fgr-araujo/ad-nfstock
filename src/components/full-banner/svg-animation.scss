@@ -45,7 +45,16 @@
     animation: move 28s linear 5s infinite backwards;
   }
 
-  & > .mobiledevices {
+  // Illustrations
+  & > .animations {
+    position: absolute;
+    width: 750px;
+    height: 500px;
+    right: 200px;
+    bottom: 100px;
+  }
+
+  & > .animations > .mobiledevices {
     position: absolute;
     bottom: 150px;
     right: 400px;
@@ -53,24 +62,25 @@
     height: 250px;
   }
 
-  & > .mobiledevices > .device {
+  & > .animations > .mobiledevices > .device {
     position: absolute;
     top: 40px;
+    width: 100%;
   }
   
-  & > .mobiledevices > .code {
+  & > .animations > .mobiledevices > .code {
     position: absolute;
     top: 20px;
     left: 30px;
     animation: bounce 1.5s ease-in-out infinite alternate;
   }
-  & > .mobiledevices > .ui {
+  & > .animations > .mobiledevices > .ui {
     position: absolute;
     left: 30px;
     animation: bounce 1.5s .3s ease-in-out infinite alternate;
   }
 
-  & > .tabletdevices {
+  & > .animations > .tabletdevices {
     position: absolute;
     bottom: 200px;
     right: 0px;
@@ -78,41 +88,43 @@
     height: 350px;
   }
 
-  & > .tabletdevices > .device {
+  & > .animations > .tabletdevices > .device {
     position: absolute;
     top: 40px;
   }
   
-  & > .tabletdevices > .code {
+  & > .animations > .tabletdevices > .code {
     position: absolute;
     top: 20px;
     left: 30px;
     animation: bounce 1.5s ease-in-out infinite alternate;
   }
-  & > .tabletdevices > .ui {
+  & > .animations > .tabletdevices > .ui {
     position: absolute;
     left: 30px;
     animation: bounce 1.5s .3s ease-in-out infinite alternate;
   }
 
-  @media (max-width: 1300px) {
-    & > .tabletdevices {
-      transform: scale(.7);
+  @media (max-width: 1370px) {
+    & > .animations > .tabletdevices {
+      display: none;
     }
 
-    & > .mobiledevices {
-      transform: scale(.7);
-      right: 300px;
+    & > .animations > .mobiledevices {
+      display: none;
     }
   }
 
-  @media (max-width: 1000px) {
-    & > .tabletdevices {
-      display: none;
+  @media (max-width: 1760px) {
+    & > .animations {
+      right: 50px;
     }
+  }
 
-    & > .mobiledevices {
-      display: none;
+  @media (max-width: 1600px) {
+    & > .animations {
+      right: -50px;
+      transform: scale(.7);
     }
   }
 }

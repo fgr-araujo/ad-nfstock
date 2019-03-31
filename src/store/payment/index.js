@@ -8,6 +8,7 @@ const state = {
 const actions = {
   buyPlan: async ({ state }, transactionInfo) => {
     const formattedPaymentInfo = BuyPlan(transactionInfo)
+
     try {
       const paymentResult = await ApplyTransaction(formattedPaymentInfo, state.pagarMeApiKey)
       return paymentResult
