@@ -20,6 +20,9 @@ Por se tratar de um projeto *front-end* demonstrativo eu optei por não utilizar
 ## Demo
 [https://nfstock-a388a.firebaseapp.com](https://nfstock-a388a.firebaseapp.com)
 
+## Mockup
+[Estrutura da tela](https://github.com/iFgR/ad-nfstock/blob/master/.documents/NFStock.jpg?raw=true)
+
 ## Paleta de Cores
 As cores utilizadas nesse este site podem ser vistas no kuler:
 
