@@ -18,12 +18,12 @@ Por se tratar de um projeto *front-end* demonstrativo eu optei por não utilizar
 * **Kuler:** Para definir a paleta de cores. [Site Oficial](https://color.adobe.com/pt/create/color-wheel/)
 
 ## Demo
-(https://nfstock-a388a.firebaseapp.com)(https://nfstock-a388a.firebaseapp.com)
+[https://nfstock-a388a.firebaseapp.com](https://nfstock-a388a.firebaseapp.com)
 
 ## Paleta de Cores
-As cores utilizadas para este site podem ser vistas no kuler:
+As cores utilizadas nesse este site podem ser vistas no kuler:
 
-(https://color.adobe.com/pt/NF-STock-color-theme-12264757/)(Paleta de cores)
+[Paleta de cores](https://color.adobe.com/pt/NF-STock-color-theme-12264757/)
 
 
 ## Instalação
@@ -73,21 +73,25 @@ Ao efetuar a compra de um plano, esse será registrado na ferramenta de pagament
 Os pagamentos podem ser acomapanhados pelo dashboard do *PagarMe* em tempo real.
 
 Para acessar o dashboard, utilize os dados abaixo:
-**site:** https://dashboard.pagar.me
-**user:** ifgr.fagner@gmail.com
-**senha:** queroseralterdata0204
+
+| Campo        | Valor           |
+| ------------- |:-------------:|
+| site      | https://dashboard.pagar.me |
+| user      | ifgr.fagner@gmail.com      |
+| senha | queroseralterdata0204      |
+
 
 Para fins de teste, usar os seguintes dados para  cartão de crédito:
-**Número do cartão:** 4111111111111111
 
-**Validate:** 1219
-
-**CVV:** 231
-
-**Nome** João da Silva
+| Campo        | Valor           |
+| ------------- |:-------------:|
+| Número do cartão      | 4111111111111111 |
+| Validate      | 1219      |
+| CVV | 231      |
+| Nome | João da Silva      |
 
 ## Melhorias
-* Cobrir melhor os testes unitários
+* Aumentar a cobertura de testes
 * Implementar GDPR
-* Validar dados do cartão de crédito
-* Componentes com máscaras
+* Melhorar a validação dos campos
+* Criar componentes com máscaras
