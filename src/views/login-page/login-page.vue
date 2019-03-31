@@ -5,7 +5,12 @@
         class="logo"
         src="https://www.alterdata.com.br/images/fixo/identidades/nfstock.svg"
         alt="NF Stock - Logo">
-      <h2 class="welcome">Seja bem-vindo</h2>        
+      <h2 class="welcome">Seja bem-vindo</h2>  
+
+      <router-link to="/">
+        <i class="fas fa-arrow-left"></i>
+        Ir para tela principal
+      </router-link>      
     </div>
 
     <div class="container">
@@ -62,12 +67,14 @@
         </div>
 
         <button
-          class="button -ghostinverse"
-          :class="{ '-busy': commandBusy }"
           type="button"
-          @click="navigateTo('/')"
-          :disabled="commandBusy">Ir para tela inicial</button>
-
+          @click="logWithGoogle"
+          class="button -ghostinverse -providerlogo">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+            class="logo">
+          Fazer login com o Google
+        </button>
       </form>
     </div>
 
@@ -143,6 +150,26 @@ export default {
       this.formData = {
         email: '',
         password: ''
+      }
+    },
+    async logWithGoogle () {
+      try {
+        await this.$store.dispatch('Login/loginWithGoogleProvider')
+        this.$router.push('/')
+      } catch(err) {
+        this.$refs.Toast.showToast({
+            toastType: 'danger',
+            description: 'N?o foi poss?vel fazer o Login' })
+      }
+    },
+    async logWithFacebook () {
+      try {
+        await this.$store.dispatch('Login/loginWithGoogleProvider')
+        this.$router.push('/')
+      } catch(err) {
+        this.$refs.Toast.showToast({
+            toastType: 'danger',
+            description: 'N?o foi poss?vel fazer o Login' })
       }
     }
   }

@@ -9,7 +9,7 @@ Por se tratar de um projeto *front-end* demonstrativo eu optei por não utilizar
 * **SCSS:** Pré-processador de estilos. [Site Oficial](https://sass-lang.com/)
 * **ITCSS:** Padrão organizacional dos arquivos de estilo. [Site não oficial](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/)
 * **RSCSS**: Padrão para a escrita das folhas de estilo. [Site Oficial](https://rscss.io/)
-* **Firebase:** Como meio de login e hosting. Achei melhor usa-lo do que crar um serviço ou utilizar o localstorage. [Site Oficial](https://firebase.google.com/?gclid=CjwKCAjwp_zkBRBBEiwAndwD9bgJi2eYxx1O_FsKvpnfCNjhNvgwKXQ5FUE2WBFphv3jdznopS2axhoCAAYQAvD_BwE)
+* **Firebase:** Como meio de login, database e hosting. Achei melhor usa-lo do que crar um serviço ou utilizar o localstorage. [Site Oficial](https://firebase.google.com/?gclid=CjwKCAjwp_zkBRBBEiwAndwD9bgJi2eYxx1O_FsKvpnfCNjhNvgwKXQ5FUE2WBFphv3jdznopS2axhoCAAYQAvD_BwE)
 * **PagarMe:** Biblioteca de pagamentos para efetuar as transações de compra.[Site Oficial](https://pagar.me/)
 * **FontAwedome:** Como biblioteca de ícones. [Site Oficial](https://fontawesome.com/)
 * **Docker:** Criação de containers [Site Oficial](https://www.docker.com/)
@@ -95,3 +95,4 @@ Para fins de teste, usar os seguintes dados para  cartão de crédito:
 * Implementar GDPR
 * Melhorar a validação dos campos
 * Criar componentes com máscaras
+* Implementar Esqueci a senha

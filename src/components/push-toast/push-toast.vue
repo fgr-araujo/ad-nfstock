@@ -1,6 +1,6 @@
 <template>
   <div class="toast" v-show="show" :class="classType">
-    <h3 v-if="title.length > 0">{{ title }}</h3>
+    <h3 v-if="title.length > 0"><strong>{{ title }}</strong></h3>
     <div class="content">
       <h5>{{ description }}</h5>
       <button class="toast-btn toast-dismiss" v-if="dismiss" @click="dismissToast"><i class="fas fa-times"></i></button>
@@ -33,6 +33,7 @@ export default {
       this.show = true
       timeoutDismiss = setTimeout(() => {
         this.show = false
+        this.$emit('finish', toastType)
       }, 4000)
     },
     dismissToast () {

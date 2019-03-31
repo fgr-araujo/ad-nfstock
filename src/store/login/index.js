@@ -7,7 +7,8 @@ const state = {
   userInformations: {
     displayName: null,
     email: null,
-    token: null
+    token: null,
+    uid: null
   }
 }
 
@@ -23,6 +24,16 @@ const actions = {
       commit('setLogin', false)
       const errorMessage = handleAuthError(err.code)
       return Promise.reject(errorMessage)
+    }
+  },
+  loginWithGoogleProvider: async () => {
+    const googleProvider = new Firebase.auth.GoogleAuthProvider()
+
+    try {
+      await Firebase.auth().signInWithPopup(googleProvider)
+      return true
+    } catch(err) {
+      return Promise.reject(err)
     }
   },
   doRegister: async ({ commit }, { email, password }) => {
@@ -41,7 +52,8 @@ const actions = {
       commit('setUser', {
         displayUser: null,
         email: null,
-        token: null
+        token: null,
+        uid: null
       })
       commit('setLogin', false)
       return true
@@ -49,7 +61,8 @@ const actions = {
       commit('setUser', {
         displayUser: null,
         email: null,
-        token: null
+        token: null,
+        uid: null
       })
       commit('setLogin', false)
       const errorMessage = handleAuthError(err.code)
@@ -60,18 +73,20 @@ const actions = {
 
 const mutations = {
   setLogin: (state, loginState) => state.isLogged = loginState,
-  setUser: (state, { displayName, email, refreshToken }) => {
+  setUser: (state, { displayName, email, refreshToken, uid }) => {
     state.userInformations = {
       ...state.userInformations,
       displayName,
       email,
-      token: refreshToken
+      token: refreshToken,
+      uid
     }
   },
   resetUser: (state) => state.userInformations = {
     displayName: null,
     email: null,
-    token: null
+    token: null,
+    uid: null
   }
 }
 

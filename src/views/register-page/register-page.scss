@@ -19,6 +19,12 @@
     margin-top: 1em;
   }
 
+  & > .illustration > [class^="router-link"] {
+    font-size: 1.5em;
+    margin-top: 3em;
+    color: $grey;
+  }
+
   & > .container {
     display: flex;
     flex: 1 1 50%;

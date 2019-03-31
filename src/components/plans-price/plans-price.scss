@@ -93,14 +93,33 @@
     margin-bottom: 2em;
   }
 
+  & > .plan > .hiredplan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: $borderRadius;
+    border: none;
+    background-color: $warning;
+    height: $formInputHeight;
+    width: 80%;
+    padding: .5em 0;
+    margin-bottom: 2em;
+    font-size: 1.2em;
+    color: $white;
+  }
+
+  & > .plan > .hiredplan > .icon {
+    font-size: 1em;
+    margin-right: 1em;
+  }
+
   & > .plan > .feature {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
     width: 100%;
     background-color: $white;
-    height: 10em;
+    height: 20em;
     padding: 1em 3em;
   }
 
@@ -108,5 +127,11 @@
     font-size: 1.1em;
     color: $dark-grey;
     line-height: 1.5em;
+  }
+
+  & > .plan > .feature > .description > .icon {
+    font-size: 1.1em;
+    line-height: 1.5em;
+    margin-right: 1em;
   }
 }

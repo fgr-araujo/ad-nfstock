@@ -5,7 +5,12 @@
         class="logo"
         src="https://www.alterdata.com.br/images/fixo/identidades/nfstock.svg"
         alt="NF Stock - Logo">
-      <h2 class="welcome">Seja bem-vindo</h2>        
+      <h2 class="welcome">Seja bem-vindo</h2>   
+
+      <router-link to="/">
+        <i class="fas fa-arrow-left"></i>
+        Ir para tela principal
+      </router-link>        
     </div>
 
     <div class="container">
@@ -78,12 +83,6 @@
             type="button"
             @click="navigateTo('/login')">Ir para Login</button>
           </div>
-
-          <button
-          class="button -ghostinverse"
-          type="button"
-          @click="navigateTo('/')"
-          :disabled="commandBusy">Ir para tela inicial</button>
       </form>
     </div>
 
@@ -95,7 +94,7 @@
 import PushToast from '@/components/push-toast/push-toast'
 
 export default {
-  name: 'LoginPage',
+  name: 'RegisterPage',
   components: {
     PushToast
   },

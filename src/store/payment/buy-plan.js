@@ -2,7 +2,7 @@ export default (creditCardInfo) => ({
   amount: creditCardInfo.price,
   card_number: creditCardInfo.cardNumber,
   card_cvv: creditCardInfo.cardCvv,
-  card_expiration_date: creditCardInfo.cardExpirationDate,
+  card_expiration_date: onlyNumbers(creditCardInfo.cardExpirationDate),
   card_holder_name: creditCardInfo.cardHolderName,
   customer: {
     external_id: creditCardInfo.token,
@@ -40,3 +40,7 @@ export default (creditCardInfo) => ({
     }
   ]
 })
+
+const onlyNumbers = (data) => {
+  return data.replace(/-|\//gi, '')
+}

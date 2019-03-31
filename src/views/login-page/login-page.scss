@@ -1,9 +1,12 @@
 .login-page {
   position: relative;
   display: flex;
-  // align-items: center;
   width: 100vw;
   height: 100vh;
+
+  @media (max-width: 640px) {
+    // padding: 0 1em;
+  }
 
   & > .illustration {
     display: flex;
@@ -17,6 +20,12 @@
     font-size: 3em;
     color: $grey;
     margin-top: 1em;
+  }
+
+  & > .illustration > [class^="router-link"] {
+    font-size: 1.5em;
+    margin-top: 3em;
+    color: $grey;
   }
 
   & > .container {
@@ -38,7 +47,8 @@
     justify-content: space-around;
     align-items: center;
     height: 400px;
-    flex: 0 0 400px;
+    flex: 0 1 400px;
+    padding: 0 1em;
   }
 
   & > .container > .form > .title {
@@ -53,8 +63,19 @@
     justify-content: space-between;
     width: 100%;
   }
+
   & > .container > .form > .commands > .button {
+    display: flex;
     flex: 0 0 45%;
   }
 
+  & > .container > .form > .button.-providerlogo {
+    display: flex;
+  }
+
+  & > .container > .form > .button.-providerlogo > .logo {
+    height: 80%;
+    width: 2em;
+    margin-right: 3em;
+  }
 }

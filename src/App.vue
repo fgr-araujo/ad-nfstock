@@ -8,21 +8,23 @@
 </template>
 
 <script>
-import firebase from 'firebase/app'
+import Firebase from 'firebase/app'
 
 export default {
   name: 'App',
   async mounted () {
     await this.$store.dispatch('Login/startFirebase')
 
-    firebase.auth().onAuthStateChanged((user) => {
+    Firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        const user = firebase.auth().currentUser;
-        this.$store.commit('Login/setUser', user)
+        const userData = Firebase.auth().currentUser;
+        this.$store.commit('Login/setUser', userData)
         this.$store.commit('Login/setLogin', true)
+        this.$store.dispatch('Plans/trackUserPlan')
       } else {
         this.$store.commit('Login/setLogin', false)
         this.$store.commit('Login/resetUser')
+        this.$store.dispatch('Plans/untrackUserPlan')
       }
     });
   }

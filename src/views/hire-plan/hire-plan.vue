@@ -92,14 +92,14 @@
           <button
             class="button -success"
             :class="{ '-busy': commandBusy }"
-            :disabled="commandBusy">Efetuar Pagamento</button>
+            :disabled="commandBusy || !isValidForm">Efetuar Pagamento</button>
 
           <button class="button -ghostinverse" @click="navigateTo('/')">Cancelar compra</button>
         </div>
       </form>
     </div>
 
-    <push-toast :dismiss="true" ref="Toast" />
+    <push-toast :dismiss="true" ref="Toast" @finish="finishedToast"/>
   </div>
 </template>
 
@@ -114,6 +114,7 @@ export default {
   data () {
     return {
       planInformations: {
+        planId: null,
         planName: '',
         planValue: 0,
         planDescriptions: [],
@@ -128,7 +129,6 @@ export default {
         invalidCardCvv: false,
         invalidCardExpirationDate: false,
         invalidCardHolderName: false,
-        invalid: false,
       },
       formData: {
         amount: '0',
@@ -139,10 +139,19 @@ export default {
       }
     }
   },
+  computed: {
+    isValidForm () {
+      const isInvalidCardNumber = this.validation.invalidCardNumber
+      const isInvalidCardCvv = this.validation.invalidCardCvv
+      const isInvalidCardExpirationDate = this.validation.invalidCardExpirationDate
+      const isInvalidCardHolderName = this.validation.invalidCardHolderName
+      return !(isInvalidCardNumber || isInvalidCardCvv || isInvalidCardExpirationDate || isInvalidCardHolderName)
+    }
+  },
   beforeMount () {
     const { planId } = this.$route.params
     const planInformations = this.$store.getters['Plans/getPlanById'](planId)
-    this.planInformations = planInformations
+    this.planInformations = { ...planInformations, planId }
   },
   methods: {
     async hirePlan () {
@@ -157,11 +166,15 @@ export default {
           email
         })
 
+        const { planId } = this.planInformations
+        this.$store.dispatch('Plans/saveHiredPlan', { planId })
+        
         this.commandBusy = false
 
         this.$refs.Toast.showToast({
           toastType: 'success',
-          description: 'Pagamento efetuado com sucesso!'
+          title: 'Pagamento efetuado com sucesso!',
+          description: 'Em segundos iremos te redirecionar...'
         })
       } catch(err) {
         this.$refs.Toast.showToast({
@@ -174,10 +187,45 @@ export default {
     navigateTo (url) {
       this.$router.push(url)
     },
-    validateCardNumber() {},
-    validateCardExpirationDate() {},
-    validateCardHolderName() {},
-    validateCardCvv() {}
+    validateCardNumber() {
+      const inputNum = this.formData.cardNumber
+
+      if (!inputNum.length) {
+        this.validation.invalidCardNumber = true
+        return
+      }
+
+      let digit, digits, flag, sum, _i, _len;
+      flag = true;
+      sum = 0;
+      digits = (inputNum + '').split('').reverse();        
+      for (_i = 0, _len = digits.length; _i < _len; _i++) {       
+        digit = digits[_i];      
+        digit = parseInt(digit, 10);          
+        if ((flag = !flag)) {                      
+          digit *= 2;               
+        }
+        if (digit > 9) {               
+          digit -= 9;                    
+        }      
+        sum += digit;          
+      }    
+      this.validation.invalidCardNumber = !(sum % 10 === 0)
+    },
+    validateCardExpirationDate() {
+      this.validation.invalidCardExpirationDate = !this.formData.cardExpirationDate.length
+    },
+    validateCardHolderName() {
+      this.validation.invalidCardHolderName = !this.formData.cardHolderName
+    },
+    validateCardCvv() {
+      this.validation.invalidCardCvv = !this.formData.cardCvv
+    },
+    finishedToast (toastType) {
+      if (toastType === 'success') {
+        this.navigateTo('/')
+      }
+    }
   }
 }
 </script>
