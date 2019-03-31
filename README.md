@@ -78,13 +78,13 @@ Para acessar o dashboard, utilize os dados abaixo:
 **senha:** queroseralterdata0204
 
 Para fins de teste, usar os seguintes dados para  cartão de crédito:
-**Número do cartão:** 4111111111111111
 
-**Validate:** 1219
-
-**CVV:** 231
-
-**Nome** João da Silva
+| Campo        | Valor           |
+| ------------- |:-------------:|
+| Número do cartão      | 4111111111111111 |
+| Validate      | 1219      |
+| CVV | 231      |
+| Nome | João da Silva      |
 
 ## Melhorias
 * Aumentar a cobertura de testes
