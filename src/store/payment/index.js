@@ -12,7 +12,6 @@ const actions = {
       const paymentResult = await ApplyTransaction(formattedPaymentInfo, state.pagarMeApiKey)
       return paymentResult
     } catch(err) {
-      console.log(err)
       return Promise.reject(err)
     }
   }

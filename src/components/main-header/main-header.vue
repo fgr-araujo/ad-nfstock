@@ -12,7 +12,7 @@
       <icon-menu class="icon" />
       <ul class="list -popup">
         <li class="item">Produto</li>
-        <li class="item">ParkClass</li>
+        <li class="item">PackClass</li>
         <li class="item">Planos</li>
         <li class="item">Contato</li>
         <li class="item">Login</li>
@@ -21,12 +21,12 @@
 
       <ul class="list -largescreen">
         <li class="item"><a href="#products">Produto</a></li>
-        <li class="item"><a href="#parkclass">ParkClass</a></li>
+        <li class="item"><a href="#parkclass">PackClass</a></li>
         <li class="item"><a href="#plans">Plano</a>s</li>
         <li class="item"><a href="#contact">Contato</a></li>
 
         <li class="item" v-if="!isLogged"><router-link to="login">Login</router-link></li>
-        <li class="item" v-if="!isLogged"><router-link to="register">Registrar</router-link></li>
+        <li class="item -border" v-if="!isLogged"><router-link to="register">Registrar</router-link></li>
         <li class="item" v-if="isLogged" @click="doLogoff">Sair</li>
       </ul>
     </nav>

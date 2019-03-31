@@ -155,6 +155,7 @@ export default {
 
       this.commandBusy = true
       await this.$store.dispatch('Contact/sendPhone', this.phoneData)
+      this.resetMessage()
       this.$refs.Toast.showToast({
         toastType: 'success',
         description: 'Mensagem enviada com sucesso!' })
@@ -164,7 +165,7 @@ export default {
       return this.validation.invalidName = this.formData.personName.length < 4
     },
     validateEmail() {
-      const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       return this.validation.invalidEmail = !emailRegex.test(this.formData.email)
     },
     validateMessage() {
@@ -190,10 +191,23 @@ export default {
       this.phoneCommandBusy = true
       await this.$store.dispatch('Contact/sendPhone', this.phoneData)
       this.phoneCommandBusy = false
+      this.resetPhone()
       this.$refs.Toast.showToast({
           toastType: 'success',
           description: 'Seu contato foi enviado com sucesso!'
         })
+    },
+    resetMessage() {
+      this.formData = {
+        personName: '',
+        email: '',
+        message: ''
+      }
+    },
+    resetPhone() {
+      this.phoneData = {
+        phoneNumber: ''
+      }
     }
   }
 }

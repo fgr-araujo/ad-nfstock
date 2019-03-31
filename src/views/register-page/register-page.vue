@@ -133,6 +133,7 @@ export default {
       try {
         await this.$store.dispatch('Login/doRegister', { email: this.formData.email, password: this.formData.password })
         this.commandBusy = false
+        this.resetForm()
         this.$router.push('/')
       } catch(err) {
         this.commandBusy = false
@@ -161,6 +162,13 @@ export default {
     },
     navigateTo (url) {
       this.$router.push(url)
+    },
+    resetForm() {
+      this.formData = {
+        email: '',
+        password: '',
+        repeatedPassword: ''
+      }
     }
   }
 }

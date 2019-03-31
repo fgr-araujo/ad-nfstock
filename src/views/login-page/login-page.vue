@@ -95,7 +95,7 @@ export default {
       formData: {
         email: '',
         password: ''
-      },
+      }
     }
   },
   methods: {
@@ -115,6 +115,7 @@ export default {
         })
 
         this.commandBusy = false
+        this.resetForm()
         this.$router.push('/')
       } catch(err) {
         this.commandBusy = false
@@ -137,6 +138,12 @@ export default {
     },
     navigateTo (url) {
       this.$router.push(url)
+    },
+    resetForm () {
+      this.formData = {
+        email: '',
+        password: ''
+      }
     }
   }
 }

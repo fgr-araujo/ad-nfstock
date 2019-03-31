@@ -4,7 +4,7 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
-  background-color: $grey;
+  background-color: $light-grey;
   padding-bottom: 3em;
 
   & > .content {
@@ -12,7 +12,7 @@
     justify-content: space-between;
     max-width: 1200px;
     width: 100%;
-    font-size: .9rem;
+    font-size: .8rem;
   }
 
   & > .content > .form {
@@ -49,6 +49,10 @@
   @media (max-width: 920px) {
     & > .content {
       flex-direction: column;
+    }
+
+    & > .content > .form {
+      margin-bottom: 10em;
     }
   }
 

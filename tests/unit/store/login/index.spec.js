@@ -4,14 +4,16 @@ describe('Login Store', () => {
   it('Should Mutate the User Informations', () => {
     const state = LoginStore.state
     const newData = {
-      userName: 'my name',
-      userId: 1
+      displayName: 'my name',
+      email: 'abc@def.com',
+      refreshToken: 1
     }
-    LoginStore.mutations.user(state, newData)
+    LoginStore.mutations.setUser(state, newData)
     const userInformations = LoginStore.getters.getUserData(state)
 
-    expect(userInformations.userName).toEqual(newData.userName)
-    expect(userInformations.userId).toEqual(newData.userId)
+    expect(userInformations.displayName).toEqual(newData.displayName)
+    expect(userInformations.email).toEqual(newData.email)
+    expect(userInformations.token).toEqual(newData.refreshToken)
   })
 
   it('Should set login on', () => {

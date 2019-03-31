@@ -20,13 +20,32 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex: 0 0 300px;
     align-items: center; 
     border: 1px solid $light-grey;
     margin: 0 2em;
     background-color: $dark-grey;
-    transform: scale(1.02);
     box-shadow: 0 0 20px 10px darken($light-grey, 10);
+  }
+
+  @media (min-width: 1000px) {
+    & > .plan:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  @media (max-width: 720px) {
+    display: block;
+    flex-direction: column;
+
+    & > .plan {
+      margin: 1em 3em 5em 3em;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    & > .plan {
+      flex: 1 1 0;
+    }
   }
 
   & > .plan > .title {

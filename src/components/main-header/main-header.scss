@@ -10,11 +10,10 @@ $popupBackgroundColor: $white;
   z-index: 1;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  z-index: 100;
   background-color: transparentize($popupBackgroundColor, 1);
   color: $white;
   transition: background-color .3s;
+  z-index: 9999;
 
   &.-opaque {
     background-color: $popupBackgroundColor;
@@ -27,22 +26,24 @@ $popupBackgroundColor: $white;
   }
   
   & > .link > .logo {
-    margin: 0 2em;
+    margin-left: 4em;
   }
   
   & > .main-menu {
-    position: relative;
     display: inline-flex;
     transition: background-color .3s;
     height: 100%;
-    padding: 0 1em;
+    margin-right: 2em;
+    padding: 0 2em;
   }
+
   & > .main-menu > .icon {
     display: none;
     fill: $white;
     width: 30px;
     height: 30px;
     align-self: center;
+    margin-right: 4em;
   }
 
   &.-opaque > .main-menu > .icon {
@@ -51,6 +52,7 @@ $popupBackgroundColor: $white;
 
   & > .main-menu > .list.-popup { display: none; }
 
+  // Mobile
   @media (max-width: 920px) {
     & > .main-menu > .icon {
       display: block;
@@ -62,6 +64,7 @@ $popupBackgroundColor: $white;
       top: $headerHeight;
       background-color: $popupBackgroundColor;
       width: 100vw;
+      left: 0;
     }
   
     & > .main-menu > .list.-largescreen {
@@ -90,6 +93,19 @@ $popupBackgroundColor: $white;
       font-size: 1.5em;
       margin: 0 1em;
     }
+
+    & > .main-menu > .list > .item.-border {
+      border: 2px solid $white;
+      padding: .5em 1em;
+      border-radius: 4px;
+      transition: all .3s;
+    }
+
+    & > .main-menu > .list > .item.-border:hover {
+      background-color: $white;
+      color: $dark-grey;
+    }
+
   }  
 }
 
